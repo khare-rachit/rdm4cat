@@ -11,8 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
 import environ
+import os
+
 # Initialize environment variables
 env = environ.Env()
 environ.Env.read_env()
@@ -42,7 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "materials"
+    "materials",
+    "dashboard",
 ]
 
 MIDDLEWARE = [
@@ -60,7 +62,7 @@ ROOT_URLCONF = "rdm4cat.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [(os.path.join(BASE_DIR, 'templates')),],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
