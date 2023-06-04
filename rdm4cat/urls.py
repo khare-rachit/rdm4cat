@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('welcome/', include('dashboard.urls')),
+    path('', include('members.urls'))
 ]
 
 #Add URL maps to redirect the base URL to our application
